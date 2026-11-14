@@ -187,7 +187,7 @@ olist-ecommerce-analysis/
 ### Step 1: Clone the repository
 
 ```bash
-git clone https://olist-ecommerce-analysis-fw7rfhkmprfrzfpqrg5bkh.streamlit.app/
+git clone https://github.com/shubham17-web/olist-ecommerce-analysis
 ```
 
 ```bash
