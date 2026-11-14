@@ -1,0 +1,6 @@
+payment_type,payment_records,total_payment_value,avg_payment_value,avg_installments
+credit_card,76795,12542084.19,163.31902063936454,3.507155413763917
+boleto,19784,2869361.27,145.03443540234534,1.0
+voucher,5775,379436.87,65.70335411255411,1.0
+debit_card,1529,217989.79,142.57017004578157,1.0
+not_defined,3,0.0,0.0,1.0
