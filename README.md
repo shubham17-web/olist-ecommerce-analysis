@@ -153,7 +153,21 @@ The application contains four analytical pages.
 
 [Olist E-Commerce Analytics Dashboard](https://olist-ecommerce-analysis-fw7rfhkmprfrzfpqrg5bkh.streamlit.app/)
 
-## 8. Project Structure
+## 8. Dashboard Screenshots
+
+### Executive Overview
+![Executive Overview](screenshots/executive-overview.png)
+
+### Revenue Analysis
+![Revenue Analysis](screenshots/revenue-analysis.png)
+
+### Customer Analysis
+![Customer Analysis](screenshots/customer-analysis.png)
+
+### Delivery & Satisfaction
+![Delivery & Satisfaction](screenshots/delivery-satisfaction.png)
+
+## 9. Project Structure
 
 ```text
 olist-ecommerce-analysis/
@@ -182,7 +196,7 @@ olist-ecommerce-analysis/
 └── sql/
 ```
 
-## 9. Run Locally
+## 10. Run Locally
 
 ### Step 1: Clone the repository
 
@@ -222,7 +236,7 @@ The application will open in your browser.
 
 **Note:** The application requires the processed CSV files in `data/processed/`. Raw datasets are excluded from the repository. The deployed application uses the files available in the repository.
 
-## 10. Key Learning Outcomes
+## 11. Key Learning Outcomes
 
 Through this project, I gained practical experience in:
 
@@ -236,7 +250,7 @@ Through this project, I gained practical experience in:
 - Managing projects with Git and GitHub.
 - Deploying a data analytics application to the cloud.
 
-## 11. Future Improvements
+## 12. Future Improvements
 
 - Add more advanced customer lifetime value analysis.
 - Improve customer retention analysis.
