@@ -4,6 +4,8 @@ An end-to-end data analytics project exploring Brazilian e-commerce transactions
 
 **Live Dashboard:** [Explore the Streamlit App](https://olist-ecommerce-analysis-fw7rfhkmprfrzfpqrg5bkh.streamlit.app/)
 
+**GitHub Repository:** [Olist E-Commerce Analytics](https://github.com/shubham17-web/olist-ecommerce-analysis)
+
 **Tech Stack:** Python · SQL · PostgreSQL · Pandas · NumPy · Matplotlib · Seaborn · Plotly · Streamlit · Git · GitHub
 
 ---
@@ -33,6 +35,7 @@ The project follows an end-to-end analytics workflow, starting with SQL-based da
 The project uses the Olist Brazilian E-Commerce Public Dataset.
 
 The dataset contains information about:
+
 - Customers
 - Orders
 - Order items
@@ -43,7 +46,7 @@ The dataset contains information about:
 - Geolocation
 - Product category translations
 
-**Core dataset size:**
+**Core Dataset Size:**
 
 | Dataset | Records |
 |---|---:|
@@ -72,41 +75,77 @@ The dataset contains information about:
 ## 5. Project Workflow
 
 ### Phase 1: SQL Setup and Data Loading
+
 - Created a PostgreSQL database.
 - Loaded the raw Olist datasets.
 - Explored tables, columns, and relationships.
 
 ### Phase 2: Data Cleaning
+
 - Checked missing values and duplicates.
 - Validated primary and composite keys.
 - Investigated inconsistent and incomplete records.
 - Prepared datasets for analysis.
 
 ### Phase 3: Exploratory Data Analysis
+
 - Analyzed sales and order distributions.
 - Explored product categories and customer behavior.
 - Examined delivery performance and review patterns.
 - Identified trends and outliers.
 
 ### Phase 4: SQL Business Analysis
+
 - Used joins, aggregations, CTEs, and window functions.
 - Analyzed revenue, customers, products, and sellers.
 - Developed queries to answer business questions.
+- Validated important analytical metrics.
 
 ### Phase 5: Delivery and Customer Satisfaction
+
 - Calculated delivery durations and late delivery rates.
 - Compared review scores for late and on-time deliveries.
 - Examined customer satisfaction across categories and locations.
 
 ### Phase 6: Interactive Streamlit Application
+
 - Developed a multi-page analytics application.
 - Created KPI cards and interactive visualizations.
-- Organized business insights into dedicated dashboard pages.
+- Organized business insights into analytical dashboard pages.
 - Deployed the application using Streamlit Community Cloud.
 
-## 6. Key Business Insights
+## 6. SQL Analysis
 
-The following findings were identified from the analyzed dataset:
+The `sql/` directory contains the PostgreSQL scripts used for data quality checks, business analysis, customer segmentation, delivery analysis, and KPI validation.
+
+| SQL File | Description |
+|---|---|
+| `01_data_quality.sql` | Row counts, missing values, duplicate checks, and referential integrity |
+| `02_revenue_analysis.sql` | Revenue trends, product categories, top products, state performance, and payment analysis |
+| `03_customer_analysis.sql` | Repeat-purchase analysis, customer revenue, and RFM segmentation |
+| `04_delivery_satisfaction.sql` | Delivery duration, late-delivery rates, review scores, and satisfaction analysis |
+| `05_validation.sql` | Validation of key business metrics and analytical results |
+
+**SQL Concepts Used:**
+
+- SELECT, WHERE, GROUP BY, and ORDER BY
+- INNER JOIN and LEFT JOIN
+- Aggregate functions
+- Common Table Expressions (CTEs)
+- Window functions
+- CASE statements
+- Date and timestamp calculations
+- Data quality and validation queries
+
+**Execution:** Run the SQL files in numerical order using pgAdmin or another PostgreSQL query tool.
+
+Refer to [`sql/README.md`](sql/README.md) for SQL folder documentation.
+
+## 7. Key Business Insights
+
+The following findings were identified from the analyzed dataset.
+
+### Overall Business Performance
 
 | Metric | Result |
 |---|---:|
@@ -120,54 +159,61 @@ The following findings were identified from the analyzed dataset:
 | Late Delivery Rate | 8.11% |
 
 ### Revenue Insights
+
 - Total item revenue was approximately R$13.59 million, excluding freight.
 - `beleza_saude` was the highest-revenue product category.
 - November 2017 recorded the highest monthly revenue in the analyzed data.
 - São Paulo generated the highest revenue among Brazilian states.
 
 ### Customer Insights
+
 - Only approximately 3.12% of unique customers made repeat purchases.
 - Repeat customers generated higher average revenue per customer than one-time customers.
 - RFM segmentation was used to understand customer value and purchasing behavior.
 
-### Delivery and Satisfaction Insights
+### Delivery and Customer Satisfaction Insights
+
 - Approximately 8.11% of valid delivered orders were delivered late.
 - Average delivery time was approximately 12.56 days.
 - Late deliveries had an average review score of 2.57.
 - On-time or early deliveries had an average review score of 4.29.
 
-**Business interpretation:** Delivery delays are strongly associated with lower customer review scores in this dataset. This is an observed relationship, not proof of causation.
+**Business Interpretation:** Delivery delays are associated with lower customer review scores in this dataset. This is an observed relationship, not proof of causation.
 
-## 7. Streamlit Dashboard
+**Revenue Definition:** Item revenue represents the sum of product prices and excludes freight. It should not be interpreted as profit.
+
+## 8. Streamlit Dashboard
 
 The application contains four analytical pages.
 
-| Page | Features |
+| Dashboard Page | Features |
 |---|---|
 | Executive Overview | Business KPIs and overall performance |
-| Revenue Analysis | Category revenue, top products, monthly trends |
-| Customer Analysis | Repeat customers, RFM segmentation, top customers |
-| Delivery & Satisfaction | Delivery performance, state analysis, customer reviews |
+| Revenue Analysis | Category revenue, top products, and monthly trends |
+| Customer Analysis | Repeat customers, RFM segmentation, and top customers |
+| Delivery & Satisfaction | Delivery performance, state analysis, and customer reviews |
 
-**Access the live application:**
+**Access the live application:** [Olist E-Commerce Analytics Dashboard](https://olist-ecommerce-analysis-fw7rfhkmprfrzfpqrg5bkh.streamlit.app/)
 
-[Olist E-Commerce Analytics Dashboard](https://olist-ecommerce-analysis-fw7rfhkmprfrzfpqrg5bkh.streamlit.app/)
-
-## 8. Dashboard Screenshots
+## 9. Dashboard Screenshots
 
 ### Executive Overview
+
 ![Executive Overview](screenshots/executive-overview.png)
 
 ### Revenue Analysis
+
 ![Revenue Analysis](screenshots/revenue-analysis.png)
 
 ### Customer Analysis
+
 ![Customer Analysis](screenshots/customer-analysis.png)
 
 ### Delivery & Satisfaction
+
 ![Delivery & Satisfaction](screenshots/delivery-satisfaction.png)
 
-## 9. Project Structure
+## 10. Project Structure
 
 ```text
 olist-ecommerce-analysis/
@@ -192,16 +238,30 @@ olist-ecommerce-analysis/
 │
 ├── notebooks/
 ├── scripts/
+│
 ├── reports/
+│
+├── screenshots/
+│   ├── executive-overview.png
+│   ├── revenue-analysis.png
+│   ├── customer-analysis.png
+│   └── delivery-satisfaction.png
+│
 └── sql/
+    ├── README.md
+    ├── 01_data_quality.sql
+    ├── 02_revenue_analysis.sql
+    ├── 03_customer_analysis.sql
+    ├── 04_delivery_satisfaction.sql
+    └── 05_validation.sql
 ```
 
-## 10. Run Locally
+## 11. Run Locally
 
 ### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/shubham17-web/olist-ecommerce-analysis
+git clone https://github.com/shubham17-web/olist-ecommerce-analysis.git
 ```
 
 ```bash
@@ -234,9 +294,9 @@ streamlit run app.py
 
 The application will open in your browser.
 
-**Note:** The application requires the processed CSV files in `data/processed/`. Raw datasets are excluded from the repository. The deployed application uses the files available in the repository.
+**Note:** The application requires the processed CSV files in `data/processed/`. Raw datasets are excluded from the repository. Make sure the required processed files are available before running the application locally.
 
-## 11. Key Learning Outcomes
+## 12. Key Learning Outcomes
 
 Through this project, I gained practical experience in:
 
@@ -250,7 +310,7 @@ Through this project, I gained practical experience in:
 - Managing projects with Git and GitHub.
 - Deploying a data analytics application to the cloud.
 
-## 12. Future Improvements
+## 13. Future Improvements
 
 - Add more advanced customer lifetime value analysis.
 - Improve customer retention analysis.
@@ -264,6 +324,8 @@ Through this project, I gained practical experience in:
 
 **Status:** Completed and Deployed
 
-**Live Application:** https://olist-ecommerce-analysis-fw7rfhkmprfrzfpqrg5bkh.streamlit.app/
+**Live Application:** [Explore Dashboard](https://olist-ecommerce-analysis-fw7rfhkmprfrzfpqrg5bkh.streamlit.app/)
+
+**GitHub:** [View Source Code](https://github.com/shubham17-web/olist-ecommerce-analysis)
 
 **Author:** Pranab Singh
